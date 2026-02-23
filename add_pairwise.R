@@ -237,21 +237,21 @@ add_pairwise <- function(
 
 
 ## test
-trial$death <- factor(trial$death)
-
-trial %>%
-  select(age, marker, grade, stage, death) %>%
-  # create summary table split by Grade
-  tbl_summary(
-    by = stage,
-    missing = "no",
-    statistic = list(
-      gtsummary::all_continuous() ~ "{mean} ({sd})",
-      gtsummary::all_categorical() ~ "{n} ({p}%)"
-    )
-  ) %>% add_pairwise(continuous_method = "lm_emmeans",
-                     categorical_method = "fisher",
-                     p.adjust.method = "holm")
+# trial$death <- factor(trial$death)
+# 
+# trial %>%
+#   select(age, marker, grade, stage, death) %>%
+#   # create summary table split by stage
+#   tbl_summary(
+#     by = stage,
+#     missing = "no",
+#     statistic = list(
+#       gtsummary::all_continuous() ~ "{mean} ({sd})",
+#       gtsummary::all_categorical() ~ "{n} ({p}%)"
+#     )
+#   ) %>% add_pairwise(continuous_method = "lm_emmeans",
+#                      categorical_method = "fisher",
+#                      p.adjust.method = "holm")
 
 
 
